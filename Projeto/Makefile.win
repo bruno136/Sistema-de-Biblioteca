@@ -1,0 +1,61 @@
+# Project: Acervo
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = main.o Livro.o Periodico.o Midia.o Relatorio.o TrabalhoConclusao.o Cartaz.o Mapa.o ItemAcervo.o ManterDados.o SalvarDados.o Menu.o
+LINKOBJ  = main.o Livro.o Periodico.o Midia.o Relatorio.o TrabalhoConclusao.o Cartaz.o Mapa.o ItemAcervo.o ManterDados.o SalvarDados.o Menu.o
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = Acervo.exe
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+Livro.o: Livro.cpp
+	$(CPP) -c Livro.cpp -o Livro.o $(CXXFLAGS)
+
+Periodico.o: Periodico.cpp
+	$(CPP) -c Periodico.cpp -o Periodico.o $(CXXFLAGS)
+
+Midia.o: Midia.cpp
+	$(CPP) -c Midia.cpp -o Midia.o $(CXXFLAGS)
+
+Relatorio.o: Relatorio.cpp
+	$(CPP) -c Relatorio.cpp -o Relatorio.o $(CXXFLAGS)
+
+TrabalhoConclusao.o: TrabalhoConclusao.cpp
+	$(CPP) -c TrabalhoConclusao.cpp -o TrabalhoConclusao.o $(CXXFLAGS)
+
+Cartaz.o: Cartaz.cpp
+	$(CPP) -c Cartaz.cpp -o Cartaz.o $(CXXFLAGS)
+
+Mapa.o: Mapa.cpp
+	$(CPP) -c Mapa.cpp -o Mapa.o $(CXXFLAGS)
+
+ItemAcervo.o: ItemAcervo.cpp
+	$(CPP) -c ItemAcervo.cpp -o ItemAcervo.o $(CXXFLAGS)
+
+ManterDados.o: ManterDados.cpp
+	$(CPP) -c ManterDados.cpp -o ManterDados.o $(CXXFLAGS)
+
+SalvarDados.o: SalvarDados.cpp
+	$(CPP) -c SalvarDados.cpp -o SalvarDados.o $(CXXFLAGS)
+
+Menu.o: Menu.cpp
+	$(CPP) -c Menu.cpp -o Menu.o $(CXXFLAGS)
